@@ -1,37 +1,26 @@
 #ifndef ITEMIMPL_H
 #define ITEMIMPL_H
 
-#include <QDate>
+#include <QSharedData>
 #include <QString>
 #include <QMetaType>
-#include <QSharedData>
-#include <QDebug>
 
-typedef double Amount;
-typedef QDate Date;
 typedef QString ID;
 
 class ItemImpl : public QSharedData
 {
-private:
+public:
     ID storage_;
     ID product_;
 
 public:
     ItemImpl();
     ItemImpl(const ID &storage, const ID &product);
-    ItemImpl(const ItemImpl &item);
-    ID storage() const;
-    ID product() const;
-
-    bool isValid() const;
-
-    ItemImpl& operator = (const ItemImpl &anotherItem);
-
-    QString toString() const;
+    ItemImpl(const ItemImpl &other);
 };
 
-Q_DECLARE_METATYPE(ItemImpl)
+Q_DECLARE_TYPEINFO(ItemImpl, Q_MOVABLE_TYPE);
+
 
 
 #endif // ITEMIMPL_H

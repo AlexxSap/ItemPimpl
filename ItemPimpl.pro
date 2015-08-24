@@ -16,9 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    Item.cpp \
-    ItemImpl.cpp
+    ItemImpl.cpp \
+    Item.cpp
 
 HEADERS += \
-    Item.h \
-    ItemImpl.h
+    ItemImpl.h \
+    Item.h
