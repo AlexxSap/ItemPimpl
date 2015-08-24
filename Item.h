@@ -8,7 +8,6 @@
 
 #include "ItemImpl.h"
 
-
 typedef double Amount;
 typedef QDate Date;
 typedef QString ID;
@@ -24,15 +23,13 @@ public:
     Item();
     Item(const ID &storage, const ID &product);
     Item(const Item &other);
+
     ID storage() const;
     ID product() const;
 
     bool isValid() const;
-
     Item& operator = (const Item &other);
-
     QString toString() const;
-
 };
 
 Q_DECLARE_METATYPE(Item)

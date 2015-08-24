@@ -31,26 +31,31 @@ Item::Item(const Item &other)
 
 ID Item::storage() const
 {
-
+    return impl_->storage_;
 }
 
 ID Item::product() const
 {
-
+    return impl_->product_;
 }
 
 bool Item::isValid() const
 {
-
+     return !(storage().isEmpty() || product().isEmpty());
 }
 
 Item &Item::operator =(const Item &other)
 {
-
+    impl_->storage_ = other.storage();
+    impl_->product_ = other.product();
+    return *this;
 }
 
 QString Item::toString() const
 {
-
+    QString str("Item(%1;%2)");
+    str = str.arg(storage())
+            .arg(product());
+    return str;
 }
 
