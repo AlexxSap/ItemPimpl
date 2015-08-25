@@ -64,4 +64,3 @@ int Item::getCounter()
 {
     return ItemImpl::counter;
 }
-
