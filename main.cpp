@@ -9,16 +9,24 @@ int main(int argc, char *argv[])
     Q_UNUSED(argc)
     Q_UNUSED(argv)
 
-    Item item1("s1", "p1");
-    Item item2(item1);
-    Item item3 = item2;
+    int max = 10000;
+    QList<Item> itemList;
+    QList<SimpleItem> simpleItemList;
 
-    SimpleItem sitem1("s1", "p1");
-    SimpleItem sitem2(sitem1);
-    SimpleItem sitem3 = sitem1;
+    const Item item("s1", "p1");
+    const SimpleItem sitem("s1", "p1");
 
     qInfo() << Item::getCounter() // = 1
-            << SimpleItem::getCounter(); // = 3
+            << SimpleItem::getCounter(); // = 1
+
+    for(int i = 0; i < max; i++)
+    {
+        itemList.append(item);
+        simpleItemList.append(sitem);
+    }
+
+    qInfo() << Item::getCounter() // = 1
+            << SimpleItem::getCounter(); // = 10001
 
     return 0;
 }
