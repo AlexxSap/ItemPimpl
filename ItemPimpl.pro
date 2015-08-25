@@ -14,13 +14,19 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+LIBS += -lpsapi
+
 
 SOURCES += main.cpp \
     ItemImpl.cpp \
     Item.cpp \
-    SimpleItem.cpp
+    SimpleItem.cpp \
+    RamTracker/RamTracker.cpp \
+    RamTracker/Utils.cpp
 
 HEADERS += \
     ItemImpl.h \
     Item.h \
-    SimpleItem.h
+    SimpleItem.h \
+    RamTracker/RamTracker.h \
+    RamTracker/Utils.h
