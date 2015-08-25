@@ -12,6 +12,7 @@ class ItemImpl : public QSharedData
 public:
     ID storage_;
     ID product_;
+    static int counter;
 
 public:
     ItemImpl();
@@ -20,7 +21,5 @@ public:
 };
 
 Q_DECLARE_TYPEINFO(ItemImpl, Q_MOVABLE_TYPE);
-
-
 
 #endif // ITEMIMPL_H

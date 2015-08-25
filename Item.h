@@ -30,6 +30,8 @@ public:
     bool isValid() const;
     Item& operator = (const Item &other);
     QString toString() const;
+
+    static int getCounter();
 };
 
 Q_DECLARE_METATYPE(Item)

@@ -48,6 +48,7 @@ Item &Item::operator =(const Item &other)
 {
     impl_->storage_ = other.storage();
     impl_->product_ = other.product();
+
     return *this;
 }
 
@@ -57,5 +58,10 @@ QString Item::toString() const
     str = str.arg(storage())
             .arg(product());
     return str;
+}
+
+int Item::getCounter()
+{
+    return ItemImpl::counter;
 }
 
